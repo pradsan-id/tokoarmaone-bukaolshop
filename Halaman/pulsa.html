@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>PULSA REGULER</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .data-transaksi {
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      background-color: #e9e9e9;
+      padding: 20px 0 10px 0;
+      box-shadow: 0 0 10px grey;
+    }
+
+    .data-transaksi button {
+      width: 100%;
+    }
+
+    .data-produk {
+      margin-top: 90px;
+    }
+
+    .produk {
+      margin-bottom: 15px;
+      padding: 15px 10px;
+      width: 100%;
+      border-top: 3px solid #1e73be;
+    }
+
+    .produk h5 {
+      margin: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .produk small {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: xx-small;
+    }
+
+    .produk:hover {
+      background-color: #1e73be;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="col-sm">
+
+    <!-- DATA TRANSAKSI START -->
+    <div class="data-transaksi">
+      <div class="container">
+        <!-- INPUT DATA START -->
+        <div class="input-data" id="input-data">
+          <input type="tel" class="form-control form-control-lg mb-3" id="catatan-produk" name="catatan-produk" placeholder="Masukan Nomor Tujuan">
+          <button type="button" class="btn btn-success" onclick="tampil()">Lanjutkan</button>
+
+        </div>
+        <!-- INPUT DATA END -->
+
+        <!-- UBAH DATA START -->
+        <div class="ubah-data d-none" id="ubah-data">
+          <button type="button" class="btn btn-danger" onclick="ubah()">Ubah Nomor</button>
+        </div>
+        <!-- UBAH DATA END -->
+      </div>
+    </div>
+
+    <!-- DATA PRODUK -->
+    <div class="data-produk">
+      <div class="container">
+        <div class="row text-center">
+
+          <!-- ALERT SALAH START -->
+          <div class="alert-salah d-none" id="alert-salah">
+            <div class="alert alert-danger">
+              <h5>TIDAK DITEMUKAN</h5>
+              <small>Silahkan tekan tombol <b>Ubah Nomor</b> di atas kemudian isi / periksa kembali nomor
+                tujuan anda.</small>
+            </div>
+          </div>
+          <!-- ALERT SALAH END -->
+
+          <!-- PRODUK TELKOMSEL START -->
+          <div class="kategori-1 d-none" id="kategori-1">
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-1-000-1409988')">
+              <h5>Telkomsel 1.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 1.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-2-000-1409991')">
+              <h5>Telkomsel 2.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 2.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-3-000-1409994')">
+              <h5>Telkomsel 3.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 3.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-4-000-1409997')">
+              <h5>Telkomsel 4.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 4.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-5-000-1410001')">
+              <h5>Telkomsel 5.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 5.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-6-000-1410165')">
+              <h5>Telkomsel 6.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 6.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-7-000-1410169')">
+              <h5>Telkomsel 7.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 7.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-8-000-1410170')">
+              <h5>Telkomsel 8.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 8.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-9-000-1410171')">
+              <h5>Telkomsel 9.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 9.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-10-000-1410172')">
+              <h5>Telkomsel 10.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 10.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-15-000-1410204')">
+              <h5>Telkomsel 15.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 15.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-20-000-1410208')">
+              <h5>Telkomsel 20.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 20.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-25-000-1410209')">
+              <h5>Telkomsel 25.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 25.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-30-000-1410212')">
+              <h5>Telkomsel 30.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 30.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-35-000-1410216')">
+              <h5>Telkomsel 35.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 35.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-40-000-1410227')">
+              <h5>Telkomsel 40.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 40.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-45-000-1410230')">
+              <h5>Telkomsel 45.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 45.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-50-000-1410232')">
+              <h5>Telkomsel 50.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 50.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-55-000-1410245')">
+              <h5>Telkomsel 55.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 55.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-60-000-1410249')">
+              <h5>Telkomsel 60.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 60.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-65-000-1410257')">
+              <h5>Telkomsel 65.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 65.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-70-000-1410260')">
+              <h5>Telkomsel 70.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 70.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-75-000-1410264')">
+              <h5>Telkomsel 75.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 75.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-80-000-1410265')">
+              <h5>Telkomsel 80.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 80.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-85-000-1410266')">
+              <h5>Telkomsel 85.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 85.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-90-000-1410271')">
+              <h5>Telkomsel 90.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 90.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-95-000-1410273')">
+              <h5>Telkomsel 95.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 95.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-100-000-1410275')">
+              <h5>Telkomsel 100.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 100.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-150-000-1410282')">
+              <h5>Telkomsel 150.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 150.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/telkomsel-200-000-1410286')">
+              <h5>Telkomsel 200.000</h5>
+              <small>TopUp Pulsa Reguler Telkomsel 200.000</small>
+            </div>
+          </div>
+          <!-- PRODUK TELKOMSEL END -->
+
+          <!-- PRODUK INDOSAT START -->
+          <div class="kategori-2 d-none" id="kategori-2">
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-5-000-1411497')">
+              <h5>Indosat 5.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 5.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-10-000-1411503')">
+              <h5>Indosat 10.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 10.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-12-000-1411508')">
+              <h5>Indosat 12.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 12.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-15-000-1411511')">
+              <h5>Indosat 15.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 15.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-20-000-1411516')">
+              <h5>Indosat 20.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 20.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-25-000-1411524')">
+              <h5>Indosat 25.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 25.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-30-000-1411571')">
+              <h5>Indosat 30.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 30.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-40-000-1411575')">
+              <h5>Indosat 40.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 40.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-50-000-1411580')">
+              <h5>Indosat 50.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 50.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-60-000-1411582')">
+              <h5>Indosat 60.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 60.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-70-000-1411587')">
+              <h5>Indosat 70.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 70.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-80-000-1412017')">
+              <h5>Indosat 80.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 80.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-90-000-1412020')">
+              <h5>Indosat 90.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 90.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/indosat-100-000-1412023')">
+              <h5>Indosat 100.000</h5>
+              <small>TopUp Pulsa Reguler Indosat 100.000</small>
+            </div>
+          </div>
+          <!-- PRODUK INDOSAT END -->
+
+          <!-- PRODUK XL START -->
+          <div class="kategori-3 d-none" id="kategori-3">
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-5-000-1410894')">
+              <h5>XL / Axis 5.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 5.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-10-000-1410926')">
+              <h5>XL / Axis 10.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 10.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-15-000-1411235')">
+              <h5>XL / Axis 15.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 15.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-25-000-1411240')">
+              <h5>XL / Axis 25.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 25.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-30-000-1411244')">
+              <h5>XL / Axis 30.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 30.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-50-000-1411434')">
+              <h5>XL / Axis 50.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 50.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-100-000-1411438')">
+              <h5>XL / Axis 100.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 100.000</small>
+            </div>
+          </div>
+          <!-- PRODUK XL END -->
+
+          <!-- PRODUK AXIS START -->
+          <div class="kategori-4 d-none" id="kategori-4">
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-5-000-1410894')">
+              <h5>XL / Axis 5.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 5.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-10-000-1410926')">
+              <h5>XL / Axis 10.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 10.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-15-000-1411235')">
+              <h5>XL / Axis 15.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 15.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-25-000-1411240')">
+              <h5>XL / Axis 25.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 25.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-30-000-1411244')">
+              <h5>XL / Axis 30.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 30.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-50-000-1411434')">
+              <h5>XL / Axis 50.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 50.000</small>
+            </div>
+            <div class="shadow rounded produk" onclick="klik('https://kiosarmaone.jualan.me/produk/xl-axis-100-000-1411438')">
+              <h5>XL / Axis 100.000</h5>
+              <small>TopUp Pulsa Reguler XL / Axis 100.000</small>
+            </div>
+          </div>
+          <!-- PRODUK AXIS END -->
+
+          <!-- PRODUK THREE START -->
+          <div class="kategori-5 d-none" id="kategori-5">
+            <div class="alert alert-info">
+              <h5>MAAF...!!!</h5>
+              <small>Saat ini produk <b>THREE</b> belum tersedia. Kami akan menambahkan produk
+                segera.</small>
+            </div>
+          </div>
+          <!-- PRODUK THREE END -->
+
+          <!-- PRODUK SMARTFREN START -->
+          <div class="kategori-6 d-none" id="kategori-6">
+            <div class="alert alert-info">
+              <h5>MAAF...!!!</h5>
+              <small>Saat ini produk <b>SMARTFREN</b> belum tersedia. Kami akan menambahkan produk
+                segera.</small>
+            </div>
+          </div>
+          <!-- PRODUK SMARTFREN END -->
+
+          <!-- PRODUK CERIA START -->
+          <div class="kategori-7 d-none" id="kategori-7">
+            <div class="alert alert-info">
+              <h5>MAAF...!!!</h5>
+              <small>Saat ini produk <b>CERIA</b> belum tersedia. Kami akan menambahkan produk
+                segera.</small>
+            </div>
+          </div>
+          <!-- PRODUK CERIA END -->
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+  <script>
+    function tampil() {
+      var catatan_transaksi = document.getElementById('catatan-produk').value;
+      var prefix = catatan_transaksi.slice(0, 4);
+
+      //telkomsel
+      if (prefix == '0811') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0812') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0813') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0821') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0822') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0823') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0851') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0852') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+      else if (prefix == '0853') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-1').classList.toggle('d-none');
+      }
+
+      //INDOSAT
+      else if (prefix == '0814') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+      else if (prefix == '0815') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+      else if (prefix == '0816') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+      else if (prefix == '0855') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+      else if (prefix == '0856') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+      else if (prefix == '0857') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+      else if (prefix == '0858') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-2').classList.toggle('d-none');
+      }
+
+      // XL
+      else if (prefix == '0817') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-3').classList.toggle('d-none');
+      }
+      else if (prefix == '0818') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-3').classList.toggle('d-none');
+      }
+      else if (prefix == '0819') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-3').classList.toggle('d-none');
+      }
+      else if (prefix == '0859') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-3').classList.toggle('d-none');
+      }
+      else if (prefix == '0877') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-3').classList.toggle('d-none');
+      }
+      else if (prefix == '0878') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-3').classList.toggle('d-none');
+      }
+
+      //AXIS
+      else if (prefix == '0831') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-4').classList.toggle('d-none');
+      }
+      else if (prefix == '0832') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-4').classList.toggle('d-none');
+      }
+      else if (prefix == '0833') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-4').classList.toggle('d-none');
+      }
+      else if (prefix == '0838') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-4').classList.toggle('d-none');
+      }
+
+      //THREE
+      else if (prefix == '0895') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-5').classList.toggle('d-none');
+      }
+      else if (prefix == '0896') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-5').classList.toggle('d-none');
+      }
+      else if (prefix == '0897') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-5').classList.toggle('d-none');
+      }
+      else if (prefix == '0898') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-5').classList.toggle('d-none');
+      }
+      else if (prefix == '0899') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-5').classList.toggle('d-none');
+      }
+
+      //SMARTFREN
+      else if (prefix == '0881') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0882') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0883') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0884') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0885') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0886') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0887') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0888') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+      else if (prefix == '0889') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-6').classList.toggle('d-none');
+      }
+
+      //CERIA
+      else if (prefix == '0828') {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('kategori-7').classList.toggle('d-none');
+      }
+
+      // SALAH
+      else {
+        document.getElementById('input-data').classList.toggle('d-none');
+        document.getElementById('ubah-data').classList.toggle('d-none');
+        document.getElementById('alert-salah').classList.toggle('d-none');
+      }
+    }
+
+    function ubah() {
+      document.getElementById('input-data').classList.remove('d-none');
+      document.getElementById('ubah-data').classList.add('d-none');
+      document.getElementById('alert-salah').classList.add('d-none');
+      document.getElementById('kategori-1').classList.add('d-none');
+      document.getElementById('kategori-2').classList.add('d-none');
+      document.getElementById('kategori-3').classList.add('d-none');
+      document.getElementById('kategori-4').classList.add('d-none');
+      document.getElementById('kategori-5').classList.add('d-none');
+      document.getElementById('kategori-6').classList.add('d-none');
+      document.getElementById('kategori-7').classList.add('d-none');
+    }
+  </script>
+  <script>
+    function klik(link) {
+      var catatan_transaksi = document.getElementById('catatan-produk').value;
+      window.location = link + '?catatan=' + catatan_transaksi;
+    }
+  </script>
+
+</body>
+
+</html>
