@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>TopUp Game</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .data-transaksi {
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            background-color: #e9e9e9;
+            padding: 20px 0 10px 0;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .data-transaksi button {
+            width: 100%;
+        }
+
+        .data-produk {
+            margin-top: 90px;
+        }
+
+        .produk {
+            margin-bottom: 15px;
+            padding: 15px 10px;
+            width: 100%;
+            border-top: 3px solid #1e73be;
+        }
+
+        .produk h5 {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .produk small {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-small;
+        }
+
+        .produk:hover {
+            background-color: #1e73be;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col-sm">
+
+        <!-- DATA TRANSAKSI START -->
+        <div class="data-transaksi">
+            <div class="container">
+                <!-- INPUT DATA START -->
+                <div class="input-data" id="input-data">
+                    <input type="tel" class="form-control form-control-lg mb-3" id="catatan-produk"
+                        name="catatan-produk" placeholder="Masukan Nomor Tujuan">
+                    <select class="form-select form-select-lg mb-3" id="kategori-produk"
+                        aria-label=".form-select-lg example">
+                        <option selected>----- Pilih Game ------</option>
+                        <option value="kategori-1">Arena Of Valor (AOV)</option>
+                        <option value="kategori-2">Call of Duty</option>
+                        <option value="kategori-3">Free Fire</option>
+                        <option value="kategori-4">Genshin Impact</option>
+                        <option value="kategori-5">Life After</option>
+                        <option value="kategori-6">Mobile Legend: Bang Bang</option>
+                        <option value="kategori-7">PUBG Mobile</option>
+                        <option value="kategori-8">Valorant</option>
+                        <option value="kategori-9">Wild Drift (LOL)</option>
+                    </select>
+                    <button type="button" class="btn btn-success" onclick="tampil()">Lanjutkan</button>
+
+                </div>
+                <!-- INPUT DATA END -->
+
+                <!-- UBAH DATA START -->
+                <div class="ubah-data d-none" id="ubah-data">
+                    <button type="button" class="btn btn-danger" onclick="ubah()">Ubah Nomor</button>
+                </div>
+                <!-- UBAH DATA END -->
+            </div>
+        </div>
+
+        <!-- DATA PRODUK -->
+        <div class="data-produk">
+            <div class="container">
+                <div class="row text-center">
+
+                    <!-- ALERT SALAH START -->
+                    <div class="alert-salah d-none" id="alert-salah">
+                        <div class="alert alert-danger">
+                            <h5>TIDAK DITEMUKAN</h5>
+                            <small>Silahkan tekan tombol <b>Ubah Nomor</b> di atas kemudian isi / periksa kembali nomor
+                                tujuan dan pilih kategori game anda.</small>
+                        </div>
+                    </div>
+                    <!-- ALERT SALAH END -->
+
+                    <!-- PRODUK ARENA OF VALOR START -->
+                    <div class="kategori-1 d-none" id="kategori-1">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>Arena of Valor (AOV)</b> belum tersedia. Kami akan menambahkan
+                                produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK ARENA OF VALOR END -->
+
+                    <!-- PRODUK CALL OF DUTY START -->
+                    <div class="kategori-2 d-none" id="kategori-2">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>Call of Duty (COD)</b> belum tersedia. Kami akan menambahkan
+                                produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK CALL OF DUTY END -->
+
+                    <!-- PRODUK FREE FIRE START -->
+                    <div class="kategori-3 d-none" id="kategori-3">
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-12-diamond-1440024')">
+                            <h5>Free Fire 12 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 12 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-50-diamond-1440025')">
+                            <h5>Free Fire 50 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 50 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-70-diamond-1439974')">
+                            <h5>Free Fire 70 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 70 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-140-diamond-1440026')">
+                            <h5>Free Fire 140 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 140 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-210-diamond-1439892')">
+                            <h5>Free Fire 210 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 210 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-355-diamond-1440027')">
+                            <h5>Free Fire 355 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 355 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-720-diamond-1440028')">
+                            <h5>Free Fire 720 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 720 DM</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/free-fire-1450-diamond-1440029')">
+                            <h5>Free Fire 1450 Diamond</h5>
+                            <small>TopUp Diamond Free Fire 1450 DM</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK FREE FIRE END -->
+
+                    <!-- PRODUK GENSHIN IMPACT START -->
+                    <div class="kategori-4 d-none" id="kategori-4">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>GENSHIN IMPACT</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK GENSHIN IMPACT END -->
+
+                    <!-- PRODUK LIFE AFTER START -->
+                    <div class="kategori-5 d-none" id="kategori-5">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>LIFE AFTER</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK LIFE AFTER END -->
+
+                    <!-- PRODUK MOBILE LEGEND START -->
+                    <div class="kategori-6 d-none" id="kategori-6">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>Mobile Legend: Bang Bang</b> belum tersedia. Kami akan menambahkan
+                                produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK MOBILE LEGEND END -->
+
+                    <!-- PRODUK PUBG MOBILE START -->
+                    <div class="kategori-7 d-none" id="kategori-7">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>PUBG Mobile</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK PUBG MOBILE END -->
+
+                    <!-- PRODUK VALORANT START -->
+                    <div class="kategori-8 d-none" id="kategori-8">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>Valorant</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK VALORANT END -->
+
+                    <!-- PRODUK WILD DRIFT START -->
+                    <div class="kategori-9 d-none" id="kategori-9">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>Langue of Legend: Wild Drift</b> belum tersedia. Kami akan
+                                menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- WILD DRIFT END -->
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        function tampil() {
+            var catatan_transaksi = document.getElementById('catatan-produk').value;
+
+
+            if (catatan_transaksi == '') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('alert-salah').classList.toggle('d-none');
+            }
+
+            else {
+                var input_kategori = document.getElementById('kategori-produk').value;
+
+                //ARENA OF VALOR (AOV)
+                if (input_kategori == 'kategori-1') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-1').classList.toggle('d-none');
+                }
+
+                //CALL OF DUTY (COD)
+                else if (input_kategori == 'kategori-2') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-2').classList.toggle('d-none');
+                }
+
+                // FREE FIRE
+                else if (input_kategori == 'kategori-3') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-3').classList.toggle('d-none');
+                }
+
+                //GENSHIN IMPACT
+                else if (input_kategori == 'kategori-4') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-4').classList.toggle('d-none');
+                }
+
+                //LIFE AFTER
+                else if (input_kategori == 'Kategori-5') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-5').classList.toggle('d-none');
+                }
+
+                //MOBILE LEGEND: BANG BANG
+                else if (input_kategori == 'kategori-6') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-6').classList.toggle('d-none');
+                }
+
+                //PUBG MOBILE
+                else if (input_kategori == 'kategori-7') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-7').classList.toggle('d-none');
+                }
+
+                //VALORANT
+                else if (input_kategori == 'kategori-8') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-8').classList.toggle('d-none');
+                }
+
+                //WILD DRIFT
+                else if (input_kategori == 'kategori-9') {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('kategori-9').classList.toggle('d-none');
+                }
+
+
+                // SALAH
+
+                else {
+                    document.getElementById('input-data').classList.toggle('d-none');
+                    document.getElementById('ubah-data').classList.toggle('d-none');
+                    document.getElementById('alert-salah').classList.toggle('d-none');
+                }
+            }
+        }
+
+        function ubah() {
+            document.getElementById('input-data').classList.remove('d-none');
+            document.getElementById('ubah-data').classList.add('d-none');
+            document.getElementById('alert-salah').classList.add('d-none');
+            document.getElementById('kategori-1').classList.add('d-none');
+            document.getElementById('kategori-2').classList.add('d-none');
+            document.getElementById('kategori-3').classList.add('d-none');
+            document.getElementById('kategori-4').classList.add('d-none');
+            document.getElementById('kategori-5').classList.add('d-none');
+            document.getElementById('kategori-6').classList.add('d-none');
+            document.getElementById('kategori-7').classList.add('d-none');
+            document.getElementById('kategori-8').classList.add('d-none');
+            document.getElementById('kategori-9').classList.add('d-none');
+        }
+    </script>
+    <script>
+        function klik(link) {
+            var catatan_transaksi = document.getElementById('catatan-produk').value;
+            window.location = link + '?catatan=' + catatan_transaksi;
+        }
+    </script>
+
+</body>
+
+</html>
