@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Kuota Internet</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .data-transaksi {
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            background-color: #e9e9e9;
+            padding: 20px 0 10px 0;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .data-transaksi button {
+            width: 100%;
+        }
+
+        .data-produk {
+            margin-top: 90px;
+        }
+
+        .produk {
+            margin-bottom: 15px;
+            padding: 15px 10px;
+            width: 100%;
+            border-top: 3px solid #1e73be;
+        }
+
+        .produk h5 {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .produk small {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-small;
+        }
+
+        .produk:hover {
+            background-color: #1e73be;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col-sm">
+
+        <!-- DATA TRANSAKSI START -->
+        <div class="data-transaksi">
+            <div class="container">
+                <!-- INPUT DATA START -->
+                <div class="input-data" id="input-data">
+                    <input type="tel" class="form-control form-control-lg mb-3" id="catatan-produk"
+                        name="catatan-produk" placeholder="Masukan Nomor Tujuan">
+                    <button type="button" class="btn btn-success" onclick="tampil()">Lanjutkan</button>
+
+                </div>
+                <!-- INPUT DATA END -->
+
+                <!-- UBAH DATA START -->
+                <div class="ubah-data d-none" id="ubah-data">
+                    <button type="button" class="btn btn-danger" onclick="ubah()">Ubah Nomor</button>
+                </div>
+                <!-- UBAH DATA END -->
+            </div>
+        </div>
+
+        <!-- DATA PRODUK -->
+        <div class="data-produk">
+            <div class="container">
+                <div class="row text-center">
+
+                    <!-- ALERT SALAH START -->
+                    <div class="alert-salah d-none" id="alert-salah">
+                        <div class="alert alert-danger">
+                            <h5>TIDAK DITEMUKAN</h5>
+                            <small>Silahkan tekan tombol <b>Ubah Nomor</b> di atas kemudian isi / periksa kembali nomor
+                                tujuan anda.</small>
+                        </div>
+                    </div>
+                    <!-- ALERT SALAH END -->
+
+                    <!-- PRODUK TELKOMSEL START -->
+                    <div class="kategori-1 d-none" id="kategori-1">
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Telkomsel Flash 1 GB</h5>
+                            <small>Semua Jaringan | 24 jam | 30 hr</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Telkomsel Flash 2 GB</h5>
+                            <small>Semua Jaringan | 24 jam | 30 hr</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Telkomsel Flash 3 GB</h5>
+                            <small>Semua Jaringan | 24 jam | 30 hr</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Telkomsel Flash 4 GB</h5>
+                            <small>Semua Jaringan | 24 jam | 30 hr</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Telkomsel Flash 5 GB</h5>
+                            <small>Semua Jaringan | 24 jam | 30 hr</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK TELKOMSEL END -->
+
+                    <!-- PRODUK INDOSAT START -->
+                    <div class="kategori-2 d-none" id="kategori-2">
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Indosat 5.000</h5>
+                            <small>TopUp Pulsa Reguler Indosat 5.000</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK INDOSAT END -->
+
+                    <!-- PRODUK XL START -->
+                    <div class="kategori-3 d-none" id="kategori-3">
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/xtra-combo-flex-s-1439314')">
+                            <h5>Xtra Combo Flex S</h5>
+                            <small>Semua Jaringan | 1,5 GB Utama | 1-2,5 GB Lokal | WA & Line Unlimited | Telpon All Opr
+                                5 mnt | Bonus klaim di MyXL</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/xtra-combo-flex-m-1439318')">
+                            <h5>Xtra Combo Flex M</h5>
+                            <small>Semua Jaringan | 4 GB Utama | 3-9 GB Lokal | WA & Line Unlimited | Telpon All Opr
+                                5 mnt | Bonus klaim di MyXL</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/xtra-combo-flex-l-1439322')">
+                            <h5>Xtra Combo Flex L</h5>
+                            <small>Semua Jaringan | 9 GB Utama | 1-16 GB Lokal | WA & Line Unlimited | Telpon All Opr
+                                5 mnt | Bonus klaim di MyXL</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/xtra-combo-flex-xl-1439357')">
+                            <h5>Xtra Combo Flex XL</h5>
+                            <small>Semua Jaringan | 15 GB Utama | 4-30 GB Lokal | WA & Line Unlimited | Telpon All Opr
+                                5 mnt | Bonus klaim di MyXL</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/xtra-combo-flex-xxl-1439371')">
+                            <h5>Xtra Combo Flex XXL</h5>
+                            <small>Semua Jaringan | 26 GB Utama | 3-46 GB Lokal | WA & Line Unlimited | Telpon All Opr
+                                5 mnt | Bonus klaim di MyXL</small>
+                        </div>
+                        <div class="shadow rounded produk" onclick="klik('https://tokoarmaone.com/produk/xtra-combo-flex-xxxl-1439375')">
+                            <h5>Xtra Combo Flex XXXL</h5>
+                            <small>Semua Jaringan | 36 GB Utama | 4-54 GB Lokal | WA & Line Unlimited | Telpon All Opr
+                                5 mnt | Bonus klaim di MyXL</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK XL END -->
+
+                    <!-- PRODUK AXIS START -->
+                    <div class="kategori-4 d-none" id="kategori-4">
+                        <div class="shadow rounded produk" onclick="klik('')">
+                            <h5>Axis 5.000</h5>
+                            <small></small>
+                        </div>
+                    </div>
+                    <!-- PRODUK AXIS END -->
+
+                    <!-- PRODUK THREE START -->
+                    <div class="kategori-5 d-none" id="kategori-5">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>THREE</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK THREE END -->
+
+                    <!-- PRODUK SMARTFREN START -->
+                    <div class="kategori-6 d-none" id="kategori-6">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>SMARTFREN</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK SMARTFREN END -->
+
+                    <!-- PRODUK CERIA START -->
+                    <div class="kategori-7 d-none" id="kategori-7">
+                        <div class="alert alert-info">
+                            <h5>MAAF...!!!</h5>
+                            <small>Saat ini produk <b>CERIA</b> belum tersedia. Kami akan menambahkan produk
+                                segera.</small>
+                        </div>
+                    </div>
+                    <!-- PRODUK CERIA END -->
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        function tampil() {
+            var catatan_transaksi = document.getElementById('catatan-produk').value;
+            var prefix = catatan_transaksi.slice(0, 4);
+
+            //telkomsel
+            if (prefix == '0811') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0812') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0813') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0821') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0822') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0823') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0851') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0852') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+            else if (prefix == '0853') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-1').classList.toggle('d-none');
+            }
+
+            //INDOSAT
+            else if (prefix == '0814') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+            else if (prefix == '0815') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+            else if (prefix == '0816') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+            else if (prefix == '0855') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+            else if (prefix == '0856') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+            else if (prefix == '0857') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+            else if (prefix == '0858') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-2').classList.toggle('d-none');
+            }
+
+            // XL
+            else if (prefix == '0817') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-3').classList.toggle('d-none');
+            }
+            else if (prefix == '0818') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-3').classList.toggle('d-none');
+            }
+            else if (prefix == '0819') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-3').classList.toggle('d-none');
+            }
+            else if (prefix == '0859') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-3').classList.toggle('d-none');
+            }
+            else if (prefix == '0877') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-3').classList.toggle('d-none');
+            }
+            else if (prefix == '0878') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-3').classList.toggle('d-none');
+            }
+
+            //AXIS
+            else if (prefix == '0831') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-4').classList.toggle('d-none');
+            }
+            else if (prefix == '0832') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-4').classList.toggle('d-none');
+            }
+            else if (prefix == '0833') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-4').classList.toggle('d-none');
+            }
+            else if (prefix == '0838') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-4').classList.toggle('d-none');
+            }
+
+            //THREE
+            else if (prefix == '0895') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-5').classList.toggle('d-none');
+            }
+            else if (prefix == '0896') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-5').classList.toggle('d-none');
+            }
+            else if (prefix == '0897') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-5').classList.toggle('d-none');
+            }
+            else if (prefix == '0898') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-5').classList.toggle('d-none');
+            }
+            else if (prefix == '0899') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-5').classList.toggle('d-none');
+            }
+
+            //SMARTFREN
+            else if (prefix == '0881') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0882') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0883') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0884') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0885') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0886') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0887') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0888') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+            else if (prefix == '0889') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-6').classList.toggle('d-none');
+            }
+
+            //CERIA
+            else if (prefix == '0828') {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('kategori-7').classList.toggle('d-none');
+            }
+
+            // SALAH
+            else {
+                document.getElementById('input-data').classList.toggle('d-none');
+                document.getElementById('ubah-data').classList.toggle('d-none');
+                document.getElementById('alert-salah').classList.toggle('d-none');
+            }
+        }
+
+        function ubah() {
+            document.getElementById('input-data').classList.remove('d-none');
+            document.getElementById('ubah-data').classList.add('d-none');
+            document.getElementById('alert-salah').classList.add('d-none');
+            document.getElementById('kategori-1').classList.add('d-none');
+            document.getElementById('kategori-2').classList.add('d-none');
+            document.getElementById('kategori-3').classList.add('d-none');
+            document.getElementById('kategori-4').classList.add('d-none');
+            document.getElementById('kategori-5').classList.add('d-none');
+            document.getElementById('kategori-6').classList.add('d-none');
+            document.getElementById('kategori-7').classList.add('d-none');
+        }
+    </script>
+    <script>
+        function klik(link) {
+            var catatan_transaksi = document.getElementById('catatan-produk').value;
+            window.location = link + '?catatan=' + catatan_transaksi;
+        }
+    </script>
+
+</body>
+
+</html>
